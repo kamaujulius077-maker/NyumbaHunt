@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Post House - SoftechHomes</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <nav>
+        <div class="logo">Softech<span>Homes</span></div><a href="/" class="nav-link">← Back</a>
+    </nav>
+    <div class="form-wrap">
+        <form method="POST" enctype="multipart/form-data" id="postForm">
+            <h2>Post Your House 🏠</h2>
+            <p style="color:#64748b; margin-bottom:15px">Appears LIVE instantly to all users</p>
+            <img id="preview">
+            <label>House Title *</label><input name="title" placeholder="2 Bedroom Master Ensuite in Ruiru Bypass"
+                required>
+            <div class="row">
+                <div><label>Location *</label><input name="location" placeholder="Gathiga, Ruiru" required></div>
+                <div><label>Price (KES) *</label><input name="price" type="number" placeholder="18000" required></div>
+            </div>
+            <div class="row">
+                <div><label>Bed Type *</label><select name="beds" required>
+                        <option>Bedsitter</option>
+                        <option>1 Bedroom</option>
+                        <option selected>2 Bedroom</option>
+                        <option>3 Bedroom</option>
+                        <option>4+ Bedroom</option>
+                    </select></div>
+                <div><label>Phone Contact *</label><input name="phone" id="phone" placeholder="0712345678" required>
+                </div>
+            </div>
+            <label>Description *</label><textarea name="description" rows="4" placeholder="Water 24/7, Parking, WiFi..."
+                required></textarea>
+            <label>House Photo *</label><input type="file" name="photo" id="photoInput" accept="image/*" required>
+            <button type="submit" class="submit-btn">🚀 Publish LIVE Now</button>
+        </form>
+    </div>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+
+</html>

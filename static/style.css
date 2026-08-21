@@ -1,0 +1,289 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Inter, Segoe UI, sans-serif
+}
+
+body {
+    background: #f8fafc
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 5%;
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, .05);
+    position: sticky;
+    top: 0;
+    z-index: 20
+}
+
+.logo {
+    font-weight: 900;
+    font-size: 22px;
+    color: #1e40af
+}
+
+.logo span {
+    color: #2563eb
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #334155;
+    margin-right: 15px;
+    font-weight: 600
+}
+
+.post-btn {
+    background: #22c55e;
+    color: #fff;
+    padding: 10px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700
+}
+
+.hero {
+    text-align: center;
+    padding: 40px 20px;
+    background: #fff;
+    border-bottom: 1px solid #e2e8f0
+}
+
+.hero h1 {
+    font-size: 36px;
+    color: #1e293b
+}
+
+.hero p {
+    color: #64748b;
+    margin-top: 8px
+}
+
+.search-box {
+    max-width: 900px;
+    margin: 25px auto;
+    background: #fff;
+    padding: 10px;
+    border-radius: 12px;
+    display: flex;
+    gap: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .08);
+    border: 1px solid #e2e8f0;
+    flex-wrap: wrap
+}
+
+.search-box input,
+.search-box select {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    min-width: 140px
+}
+
+.search-box button {
+    background: #2563eb;
+    color: #fff;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+    gap: 24px;
+    padding: 30px 5%
+}
+
+.card {
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, .06);
+    transition: .2s
+}
+
+.card:hover {
+    transform: translateY(-5px)
+}
+
+.card img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover
+}
+
+.info {
+    padding: 16px
+}
+
+.top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
+
+.beds {
+    background: #e0f2fe;
+    color: #0369a1;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700
+}
+
+.price {
+    color: #16a34a;
+    font-weight: 800;
+    font-size: 18px
+}
+
+.loc {
+    color: #64748b;
+    font-size: 13px
+}
+
+.desc {
+    color: #475569;
+    font-size: 14px;
+    margin-top: 6px
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 14px
+}
+
+.call {
+    flex: 1;
+    background: #f1f5f9;
+    text-align: center;
+    padding: 10px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #334155;
+    font-weight: 600
+}
+
+.wa {
+    flex: 1;
+    background: #22c55e;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700
+}
+
+.form-wrap {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 0 15px
+}
+
+.form-wrap form {
+    background: #fff;
+    padding: 28px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .07)
+}
+
+.form-wrap label {
+    font-weight: 600;
+    font-size: 14px;
+    margin-top: 10px;
+    display: block
+}
+
+.form-wrap input,
+.form-wrap textarea,
+.form-wrap select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    margin: 6px 0 14px
+}
+
+.row {
+    display: flex;
+    gap: 12px
+}
+
+.row>div {
+    flex: 1
+}
+
+.submit-btn {
+    width: 100%;
+    background: #2563eb;
+    color: #fff;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 800;
+    cursor: pointer
+}
+
+#preview {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 12px;
+    display: none;
+    margin-bottom: 12px;
+    border: 2px dashed #2563eb
+}
+
+.live-notif {
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    background: #111;
+    color: #fff;
+    padding: 14px 20px;
+    border-radius: 10px;
+    z-index: 9999;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .3);
+    border-left: 4px solid #22c55e;
+    font-weight: 600;
+    animation: slideIn.4s
+}
+
+.new-live {
+    border: 2px solid #22c55e;
+    animation: popIn.5s
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%)
+    }
+
+    to {
+        transform: translateX(0)
+    }
+}
+
+@keyframes popIn {
+    0% {
+        transform: scale(.9);
+        opacity: 0
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1
+    }
+}

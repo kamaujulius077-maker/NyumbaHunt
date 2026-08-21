@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SoftechHomes - Find Your Next Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <nav>
+        <div class="logo">Softech<span>Homes</span></div>
+        <div>
+            <a href="/contact" class="nav-link">Contact</a>
+            <a href="/post" class="post-btn">+ Post a House</a>
+        </div>
+    </nav>
+    <div class="hero">
+        <h1>Find Your Next Home</h1>
+        <p>Verified rentals in Ruiru, Gathiga, Juja, Thika, Westlands</p>
+        <form method="GET" action="/" class="search-box">
+            <input name="location" placeholder="Location: Gathiga...">
+            <input name="max_price" type="number" placeholder="Max Price KES">
+            <select name="beds">
+                <option value="">Any Beds</option>
+                <option>Bedsitter</option>
+                <option>1 Bedroom</option>
+                <option>2 Bedroom</option>
+                <option>3 Bedroom</option>
+            </select>
+            <button type="submit">Search</button>
+        </form>
+    </div>
+    <div class="cards">
+        {% for h in houses %}
+        <div class="card">
+            <img
+                src="{{ url_for('static', filename='uploads/' + h.image) if h.image else 'https://via.placeholder.com/400x300?text=No+Image' }}">
+            <div class="info">
+                <div class="top"><span class="beds">{{ h.beds }}</span><span class="price">KES {{ "{:,}".format(h.price)
+                        }}</span></div>
+                <h3>{{ h.title }}</h3>
+                <p class="loc">📍 {{ h.location }}</p>
+                <p class="desc">{{ h.description[:80] }}</p>
+                <div class="actions">
+                    <a href="tel:{{ h.phone }}" class="call">📞 {{ h.phone }}</a>
+                    <a href="https://wa.me/254{{ h.phone[-9:] }}" target="_blank" class="wa">WhatsApp</a>
+                </div>
+            </div>
+        </div>
+        {% else %}
+        <div style="grid-column:1/-1; text-align:center; padding:60px;">
+            <h3>No houses posted yet</h3>
+            <p>Be the first!</p>
+        </div>
+        {% endfor %}
+    </div>
+    <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+
+</html>

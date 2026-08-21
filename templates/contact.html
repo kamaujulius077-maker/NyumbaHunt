@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contact - SoftechHomes</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <nav>
+        <div class="logo">Softech<span>Homes</span></div><a href="/" class="nav-link">← Home</a>
+    </nav>
+    <div class="form-wrap">
+        <div style="background:#fff; padding:28px; border-radius:16px; box-shadow:0 10px 30px rgba(0,0,0,.07)">
+            <h2>Contact Us</h2>
+            <div style="background:#f8fafc; padding:15px; border-radius:10px; margin:15px 0">
+                <p>📞 0712 345 678</p>
+                <p>💬 WhatsApp: 0712 345 678</p>
+                <p>📧 support@softechhomes.co.ke</p>
+                <p>📍 Ruiru, Kiambu</p>
+            </div>
+            <form onsubmit="alert('Message sent!'); return false;">
+                <label>Your Name</label><input required><label>Message</label><textarea rows="4" required></textarea>
+                <button class="submit-btn" type="submit">Send Message</button>
+                <a href="https://wa.me/254712345678" class="wa"
+                    style="display:block; text-align:center; margin-top:12px; text-decoration:none; padding:12px; border-radius:10px;">Chat
+                    on WhatsApp</a>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
