@@ -27,9 +27,22 @@ class House(db.Model):
     image = db.Column(db.String(200))
     date = db.Column(db.DateTime, default=datetime.utcnow)
 
-with app.app_context():
-    db.create_all()
+try:
+    with app.app_context():
+        db.create_all()
+except:
+    pass
 
+@app.route('/')
+def home():
+   ...
+
+@app.route('/post')
+def post_house():
+   ...
+
+if __name__ == '__main__':
+    app.run(debug=True)
 @app.route('/')
 def home():
     location = request.args.get('location','')
@@ -78,5 +91,5 @@ def contact():
     return render_template('contact.html')
 
 if __name__ == '__main__':
-    socketio.run(app, debug=True, port=5001)
+    socketio.run(app, debug=True)
 
