@@ -33,17 +33,7 @@ try:
 except:
     pass
 
-@app.route('/')
-def home():
-   ...
 
-@app.route('/post')
-def post_house():
-   ...
-
-if __name__ == '__main__':
-    app.run(debug=True)
-@app.route('/')
 def home():
     location = request.args.get('location','')
     max_price = request.args.get('max_price','')
